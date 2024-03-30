@@ -1,0 +1,103 @@
+/* Import a font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+/* Body styles */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Use a gradient background */
+  background: linear-gradient(to right, pink, orange, yellow, green, blue, purple);
+  background-size: 1000px;
+  background-position: center center;
+}
+
+/* Paper styles */
+.paper {
+  background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
+  background-size: 500px;
+  background-position: center center;
+  padding: 20px 100px;
+/*  min-width: 800px; */
+  
+  transform: rotateZ(-5deg);
+  /* Add some border-radius and box-shadow */
+  border-radius: 10px;
+  box-shadow: 5px 10px 20px 0px rgba(0,0,0,0.5);
+
+  position: absolute;
+
+  /* Add some transition for animation */
+  transition: all 0.3s ease;
+}
+
+/* Paper hover styles */
+.paper:hover {
+  /* Make the paper bigger and brighter when hovered */
+  transform: scale(1.1) rotateZ(-5deg);
+  box-shadow: 10px 15px 25px 0px rgba(0,0,0,0.7);
+  filter: brightness(1.2);
+}
+
+/* Paper active styles */
+.paper:active {
+  /* Make the paper smaller and darker when dragged */
+  transform: scale(0.9) rotateZ(-5deg);
+  box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.3);
+  filter: brightness(0.8);
+}
+
+/* Heart styles */
+.paper.heart {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.paper.heart::after {
+  content: "";
+  background-image: url('https://cdn.pixabay.com/photo/2016/03/31/19/25/cartoon-1294994__340.png');
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+/* Image styles */
+.paper.image {
+  padding: 10px;
+}
+.paper.image p {
+  font-size: 30px;
+}
+
+img {
+  max-height: 200px;
+  width: 100%;
+  user-select: none;
+}
+
+/* Paragraph styles */
+p {
+  /* Use the imported font */
+  font-family: 'Indie Flower', cursive;
+  font-size: 50px;
+  color: rgb(0,0,100);
+  opacity: 0.75;
+  user-select: none;
+  
+  // filter: drop-shadow(2px 1.5px 1px rgba(0,0,105,0.9));
+
+  /* Add some font-weight and text-align */
+  font-weight: bold;
+  text-align: center;
+}
